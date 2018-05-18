@@ -1,5 +1,10 @@
 package org.zerock.domain;
 
+
+
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 import lombok.Data;
 
 @Data
@@ -28,6 +33,11 @@ public class PageMaker {
 			this.next = true;
 		}
 		this.end = tempLast;
+	}
+
+	public String makeQuery(int page) {
+		UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page).build();
+		return uriComponents.toUriString();
 	}
 
 }

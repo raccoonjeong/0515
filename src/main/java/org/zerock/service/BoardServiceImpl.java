@@ -27,5 +27,21 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.getTotal(cri);
 	}
 
+	@Override
+	public int register(BoardVO vo) {
+		
+		return mapper.register(vo);
+	}
+
+	@Override
+	public BoardVO read(int bno) {
+	
+		return mapper.read(bno);
+	}
+
+	
+
+	
+
 	
 }
